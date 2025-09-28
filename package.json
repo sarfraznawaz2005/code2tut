@@ -1,0 +1,40 @@
+{
+  "name": "code2tut",
+  "version": "1.0.0",
+  "description": "Generate tutorials from codebases using AI",
+  "main": "index.js",
+  "bin": {
+    "code2tut": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "tutorial",
+    "codebase",
+    "ai",
+    "llm"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@langchain/core": "*",
+    "@langchain/google-genai": "*",
+    "@langchain/openai": "*",
+    "chalk": "*",
+    "commander": "*",
+    "fs-extra": "*",
+    "ignore": "*",
+    "js-yaml": "^4.1.0",
+    "marked": "*",
+    "micromatch": "*",
+    "pocketflow": "*",
+    "puppeteer": "^24.22.3",
+    "zod": "*",
+    "zod-to-json-schema": "^3.24.6"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
