@@ -30,9 +30,7 @@
     "marked": "*",
     "micromatch": "*",
     "pocketflow": "*",
-    "puppeteer": "^24.22.3",
-    "zod": "*",
-    "zod-to-json-schema": "^3.24.6"
+    "puppeteer": "^24.22.3"
   },
   "devDependencies": {
     "jest": "^29.7.0"

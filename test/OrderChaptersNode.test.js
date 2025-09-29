@@ -46,7 +46,7 @@ describe('OrderChaptersNode', () => {
   });
 
   test('exec should call LLM and return ordered indices', async () => {
-    const mockResponse = { order: ['2', '0', '1'] }; // Ordered as 2, 0, 1
+    const mockResponse = ['2', '0', '1']; // Ordered as 2, 0, 1
     const mockLlm = {
       loadCache: jest.fn().mockReturnValue({}),
       callWithStructuredOutput: jest.fn().mockResolvedValue(mockResponse),
@@ -62,7 +62,7 @@ describe('OrderChaptersNode', () => {
   });
 
     test('exec should handle cached response', async () => {
-      const mockResponse = { order: ['1', '0', '2'] };
+      const mockResponse = ['1', '0', '2'];
       LLMCaller.mockImplementation(() => ({
         callWithStructuredOutput: jest.fn().mockResolvedValue(mockResponse),
       }));
@@ -75,7 +75,7 @@ describe('OrderChaptersNode', () => {
    });
 
   test('exec should add missing indices at the end', async () => {
-    const mockResponse = { order: ['0', '1'] }; // Missing index 2
+    const mockResponse = ['0', '1']; // Missing index 2
     const mockLlm = {
       loadCache: jest.fn().mockReturnValue({}),
       callWithStructuredOutput: jest.fn().mockResolvedValue(mockResponse),
@@ -90,7 +90,7 @@ describe('OrderChaptersNode', () => {
   });
 
     test('exec should throw error for duplicate indices', async () => {
-      const mockResponse = { order: ['0', '1', '2', '0'] }; // Duplicate 0, but length matches
+      const mockResponse = ['0', '1', '2', '0']; // Duplicate 0, but length matches
       const mockLlm = {
         loadCache: jest.fn().mockReturnValue({}),
         callWithStructuredOutput: jest.fn().mockResolvedValue(mockResponse),
@@ -103,7 +103,7 @@ describe('OrderChaptersNode', () => {
    });
 
     test('exec should handle invalid index', async () => {
-      const mockResponse = { order: ['0', '1', '5'] }; // 5 is invalid, but length matches
+      const mockResponse = ['0', '1', '5']; // 5 is invalid, but length matches
       const mockLlm = {
         loadCache: jest.fn().mockReturnValue({}),
         callWithStructuredOutput: jest.fn().mockResolvedValue(mockResponse),

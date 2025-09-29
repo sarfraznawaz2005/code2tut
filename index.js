@@ -19,10 +19,10 @@ program
   .option('-e, --exclude <patterns...>', 'Exclude file patterns')
   .option('-s, --max-size <size>', 'Max file size in bytes', parseInt, 100000)
   .option('-v, --verbose', 'Enable verbose output')
-  .option('--cache <bool>', 'Enable caching', 'true')
-  .option('--max-abstractions <num>', 'Max abstractions', parseInt)
-  .option('--llm-provider <provider>', 'LLM provider: openai, anthropic, google')
-  .option('--format <format>', 'Output format: markdown, html, pdf', 'html')
+  .option('-c, --cache <bool>', 'Enable caching', 'true')
+  .option('-m, --max-abstractions <num>', 'Max abstractions', parseInt)
+  .option('-p, --llm-provider <provider>', 'LLM provider: openai, anthropic, google')
+  .option('-f, --format <format>', 'Output format: markdown, html, pdf', 'html')
 
 
 program.action(async (options) => {
